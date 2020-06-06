@@ -30,11 +30,14 @@ const HeadNav = () => {
   `;
   const SearchBarContainer = styled.div`
     width: 100%;
+    display: flex;
   `;
   const SearchBar = styled.input`
     border: none;
+    outline: none;
     width: 100%;
     padding: 10px;
+    font-size: 1rem;
   `;
 
   return (
@@ -45,7 +48,8 @@ const HeadNav = () => {
         </LogoContainer>
         <SiteName>Search Hacker News</SiteName>
         <SearchBarContainer>
-          <SearchBar></SearchBar>
+          <i className="fa fa-search" />
+          <SearchBar placeholder="Search stories by title" />
         </SearchBarContainer>
         <div>Gear</div>
       </NAV>
