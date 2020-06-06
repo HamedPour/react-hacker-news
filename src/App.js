@@ -1,5 +1,5 @@
 import React from "react";
-import HeadNav from "./components/shared/HeadNav";
+import HeadNav from "./components/shared/HeadNav/HeadNav";
 
 function App() {
   return (
