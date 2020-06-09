@@ -1,15 +1,14 @@
 import React from "react";
-import HeadNav from "./components/shared/HeadNav";
-import SearchFilter from "./components/shared/SearchFilter";
+import HeadNav from "./components/HeadNav/HeadNav";
+import SearchFilterBar from "./components/SearchFilterBar/SearchFilterBar";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <HeadNav />
-        <SearchFilter />
+        <SearchFilterBar />
       </header>
-      <main>main content goes here</main>
     </div>
   );
 }
