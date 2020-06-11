@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export default styled.ul`
   border: 1px solid rgba(0, 0, 0, 0.2);
-  display: ${(props) => (props.isVisible ? "none" : "block")};
+  display: ${(props) => (props.isVisible ? "block" : "none")};
   min-width: 100px;
   list-style: none;
   background-color: #fff;
