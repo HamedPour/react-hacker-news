@@ -2,11 +2,21 @@ import React from "react";
 import DropDownBoxContainer from "./styledComponents/DropDownBoxContainer";
 
 const DropDownBox = (props) => {
-  let data = [...props.data];
+  const data = [...props.data];
+  const isVisible = props.isVisible;
+
+  function itemSelected(e) {
+    props.onItemSelected(e.target.innerHTML);
+  }
+
   return (
-    <DropDownBoxContainer>
+    <DropDownBoxContainer isVisible={isVisible}>
       {data.map((item, index) => {
-        return <li key={index}>{item}</li>;
+        return (
+          <li onClick={itemSelected} key={index}>
+            {item}
+          </li>
+        );
       })}
     </DropDownBoxContainer>
   );

@@ -5,4 +5,13 @@ export default styled.ul`
   border: 1px solid rgba(0, 0, 0, 0.5);
   cursor: pointer;
   position: relative;
+  @media only screen and (max-width: 600px) {
+    margin: 0 5px;
+  }
+
+  & li {
+    list-style: none;
+    font-size: 0.8rem;
+    padding: 0 3px;
+  }
 `;

@@ -4,27 +4,37 @@ import StoriesFilter from "./styledComponents/StoriesFilter";
 import DropDownBox from "../DropDownBox/DropDownBox";
 
 const SearchFilter = () => {
-  const [storyFilter, setStoryFilter] = useState([
-    "All",
-    "Stories",
-    "Comments",
-  ]);
+  const storyFilterItems = ["All", "Stories", "Comments"];
+  const [dropBoxVisible, setDropBoxVisible] = useState(false);
+  const [storyFilter, setStoryFilter] = useState("All");
+
+  function toggleDropDownBoxVisibility() {
+    setDropBoxVisible(!dropBoxVisible);
+  }
+
+  function handleItemSelected(item) {
+    setStoryFilter(item);
+  }
 
   return (
     <>
       <MainFilterContainer>
         <span>Search</span>
-        <StoriesFilter>
-          <span>
-            {storyFilter[0]} <i className="fa fa-angle-down" />
-          </span>
-          <DropDownBox data={[...storyFilter]} />
+        <StoriesFilter onClick={toggleDropDownBoxVisibility}>
+          <li>
+            {storyFilter} <i className="fa fa-angle-down" />
+          </li>
+          <DropDownBox
+            onItemSelected={(item) => handleItemSelected(item)}
+            isVisible={dropBoxVisible}
+            data={storyFilterItems}
+          />
         </StoriesFilter>
         <span>by</span>
         <div>DROPDOWN</div>
         <span>for</span>
         <div>DROPDOWN</div>
-        <div>21,263 results (0.02 seconds)</div>
+        <span>21,263 results (0.02 seconds)</span>
       </MainFilterContainer>
     </>
   );
