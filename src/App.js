@@ -1,6 +1,7 @@
 import React from "react";
 import HeadNav from "./components/HeadNav/HeadNav";
 import SearchFilterBar from "./components/SearchFilterBar/SearchFilterBar";
+import Story from "./components/Story/Story";
 
 function App() {
   return (
@@ -9,6 +10,9 @@ function App() {
         <HeadNav />
         <SearchFilterBar />
       </header>
+      <main>
+        <Story />
+      </main>
     </div>
   );
 }

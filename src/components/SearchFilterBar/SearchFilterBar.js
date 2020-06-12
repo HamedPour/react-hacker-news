@@ -42,7 +42,14 @@ const SearchFilter = () => {
         <span>Search</span>
         <FilterMenu onClick={() => toggleDropDownBoxVisibility(1)}>
           <li>
-            {storyFilter} <i className="fa fa-angle-down" />
+            {storyFilter}{" "}
+            <i
+              className={
+                dropBoxVisible && dropDownIndex === 1
+                  ? "fa fa-angle-up"
+                  : "fa fa-angle-down"
+              }
+            />
           </li>
           <DropDownBox
             onItemSelected={(item) => handleItemSelected(item)}
@@ -53,7 +60,14 @@ const SearchFilter = () => {
         <span>by</span>
         <FilterMenu onClick={() => toggleDropDownBoxVisibility(2)}>
           <li>
-            {popularityFilter} <i className="fa fa-angle-down" />
+            {popularityFilter}{" "}
+            <i
+              className={
+                dropBoxVisible && dropDownIndex === 2
+                  ? "fa fa-angle-up"
+                  : "fa fa-angle-down"
+              }
+            />
           </li>
           <DropDownBox
             onItemSelected={(item) => handleItemSelected(item)}
@@ -64,7 +78,14 @@ const SearchFilter = () => {
         <span>for</span>
         <FilterMenu onClick={() => toggleDropDownBoxVisibility(3)}>
           <li>
-            {timeFilter} <i className="fa fa-angle-down" />
+            {timeFilter}{" "}
+            <i
+              className={
+                dropBoxVisible && dropDownIndex === 3
+                  ? "fa fa-angle-up"
+                  : "fa fa-angle-down"
+              }
+            />
           </li>
           <DropDownBox
             onItemSelected={(item) => handleItemSelected(item)}

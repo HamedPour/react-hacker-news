@@ -2,11 +2,10 @@ import styled from "styled-components";
 
 export default styled.div`
   user-select: none;
-  background-color: #f6f6ef;
+  color: #828282;
   display: flex;
   min-height: 40px;
   align-items: center;
-  border: 2px solid blue;
 
   @media only screen and (max-width: 600px) {
     padding-right: 20px;

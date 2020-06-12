@@ -6,3 +6,9 @@
   box-sizing: border-box;
   font-family: "Helvetica", "Segoe UI", "Calibri";
 }
+
+.App {
+  max-width: 1480px;
+  margin: 0 auto;
+  background-color: #f6f6ef;
+}
