@@ -1,36 +1,44 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ArticleContainer from "./styledComponents/ArticleContainer";
 import Article from "./styledComponents/Article";
 import ArticleTitle from "./styledComponents/ArticleTitle";
 import ArticleMeta from "./styledComponents/ArticleMeta";
 
-const Story = () => {
+const Story = (props) => {
+  const [metaData, setMetaData] = useState({});
+
+  useEffect(() => {
+    setMetaData(props.metaData);
+  }, [props]);
+
   return (
     <ArticleContainer>
       <Article>
         <ArticleTitle>
-          <a>Stephen Hawking has died</a>
-          <a>(http://www.bbc.come/news/sdjfhe3423)</a>
+          <a>{metaData.storyTitle}</a>
+          <a>({metaData.storyURL})</a>
         </ArticleTitle>
         <ArticleMeta>
           <span>
             {" "}
-            <a> 6348 points</a>
+            <a> {metaData.storyPoints} points</a>
           </span>
           <b> | </b>
           <span>
             {" "}
-            <a>Congio</a>{" "}
+            <a>{metaData.storyAuthor}</a>{" "}
           </span>
           <b> | </b>
           <span>
             {" "}
-            <a>2 years ago</a>{" "}
+            <a>{metaData.storyDate}</a>{" "}
           </span>
           <b> | </b>
           <span>
             {" "}
-            <a>436 comments</a>{" "}
+            <a href={metaData.storyCommentSection}>
+              {metaData.storyCommentsCount} comments
+            </a>{" "}
           </span>
           <b> | </b>
         </ArticleMeta>

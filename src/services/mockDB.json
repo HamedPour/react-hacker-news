@@ -1,0 +1,31 @@
+{
+  "stories": [
+    {
+      "storyTitle": "Article one",
+      "storyURL": "https://something/something",
+      "storyPoints": "7748",
+      "storyAuthor": "Congio",
+      "storyDate": "2 Years ago",
+      "storyCommentsCount": "434",
+      "storyCommentSection": "https://news.ycombinator.com/item?id=16582136"
+    },
+    {
+      "storyTitle": "Article two",
+      "storyURL": "https://otherthings/otherthings",
+      "storyPoints": "231",
+      "storyAuthor": "Timmy",
+      "storyDate": "1 Years ago",
+      "storyCommentsCount": "44",
+      "storyCommentSection": "https://news.ycombinator.com/item?id=16582136"
+    },
+    {
+      "storyTitle": "Article three",
+      "storyURL": "https://manythings/manythings",
+      "storyPoints": "923",
+      "storyAuthor": "JessyJames",
+      "storyDate": "1 month ago",
+      "storyCommentsCount": "666",
+      "storyCommentSection": "https://news.ycombinator.com/item?id=16582136"
+    }
+  ]
+}
