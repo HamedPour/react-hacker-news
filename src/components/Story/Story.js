@@ -5,42 +5,47 @@ import ArticleTitle from "./styledComponents/ArticleTitle";
 import ArticleMeta from "./styledComponents/ArticleMeta";
 
 const Story = (props) => {
-  const [metaData, setMetaData] = useState({});
+  const [story, setStory] = useState({});
 
   useEffect(() => {
-    setMetaData(props.metaData);
+    setStory(props.story);
   }, [props]);
+
+  if (props.loading) {
+    return <h2>Loading ...</h2>;
+  }
 
   return (
     <ArticleContainer>
       <Article>
         <ArticleTitle>
-          <a>{metaData.storyTitle}</a>
-          <a>({metaData.storyURL})</a>
+          <a href={story.commentSectionURL}>{story.mainTitle}</a>
+          <a target="_blank" rel="noopener noreferrer" href={story.articleURL}>
+            ({story.articleURL})
+          </a>
         </ArticleTitle>
         <ArticleMeta>
           <span>
             {" "}
-            <a> {metaData.storyPoints} points</a>
+            <a href={story.commentSectionURL}> {story.points} points</a>
           </span>
           <b> | </b>
           <span>
             {" "}
-            <a>{metaData.storyAuthor}</a>{" "}
+            <a href={story.authorURL}>{story.author}</a>{" "}
           </span>
           <b> | </b>
           <span>
             {" "}
-            <a>{metaData.storyDate}</a>{" "}
+            <a href={story.commentSectionURL}>{story.date}</a>{" "}
           </span>
           <b> | </b>
           <span>
             {" "}
-            <a href={metaData.storyCommentSection}>
-              {metaData.storyCommentsCount} comments
+            <a href={story.commentSectionURL}>
+              {story.commentCounts} comments
             </a>{" "}
           </span>
-          <b> | </b>
         </ArticleMeta>
       </Article>
     </ArticleContainer>

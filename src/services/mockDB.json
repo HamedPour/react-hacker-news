@@ -1,31 +1,164 @@
 {
   "stories": [
     {
-      "storyTitle": "Article one",
-      "storyURL": "https://something/something",
-      "storyPoints": "7748",
-      "storyAuthor": "Congio",
-      "storyDate": "2 Years ago",
-      "storyCommentsCount": "434",
-      "storyCommentSection": "https://news.ycombinator.com/item?id=16582136"
+      "mainTitle": "Earth on the course to Mars",
+      "articleURL": "https://something/something",
+      "points": "7748",
+      "author": "Musk",
+      "authorURL": "https://authors/author",
+      "date": "1 month ago",
+      "commentCounts": "434",
+      "commentSectionURL": "https://news.ycombinator.com/item?id=16582136"
     },
     {
-      "storyTitle": "Article two",
-      "storyURL": "https://otherthings/otherthings",
-      "storyPoints": "231",
-      "storyAuthor": "Timmy",
-      "storyDate": "1 Years ago",
-      "storyCommentsCount": "44",
-      "storyCommentSection": "https://news.ycombinator.com/item?id=16582136"
+      "mainTitle": "New Generation of PS5 Games",
+      "articleURL": "https://something/something",
+      "points": "378",
+      "author": "SonyUK",
+      "authorURL": "https://authors/author",
+      "date": "2 month ago",
+      "commentCounts": "34",
+      "commentSectionURL": "https://news.ycombinator.com/item?id=16582136"
     },
     {
-      "storyTitle": "Article three",
-      "storyURL": "https://manythings/manythings",
-      "storyPoints": "923",
-      "storyAuthor": "JessyJames",
-      "storyDate": "1 month ago",
-      "storyCommentsCount": "666",
-      "storyCommentSection": "https://news.ycombinator.com/item?id=16582136"
+      "mainTitle": "The Great Wildlands",
+      "articleURL": "https://something/something",
+      "points": "3788",
+      "author": "Skylark",
+      "authorURL": "https://authors/author",
+      "date": "1 years ago",
+      "commentCounts": "534",
+      "commentSectionURL": "https://news.ycombinator.com/item?id=16582136"
+    },
+    {
+      "mainTitle": "Trump Dies Horribly",
+      "articleURL": "https://something/something",
+      "points": "333788",
+      "author": "World",
+      "authorURL": "https://authors/author",
+      "date": "ars ago",
+      "commentCounts": "534",
+      "commentSectionURL": "https://news.ycombinator.com/item?id=16582136"
+    },
+    {
+      "mainTitle": "Trump Dies Horribly",
+      "articleURL": "https://something/something",
+      "points": "333788",
+      "author": "World",
+      "authorURL": "https://authors/author",
+      "date": "ars ago",
+      "commentCounts": "534",
+      "commentSectionURL": "https://news.ycombinator.com/item?id=16582136"
+    },
+    {
+      "mainTitle": "Trump Dies Horribly",
+      "articleURL": "https://something/something",
+      "points": "333788",
+      "author": "World",
+      "authorURL": "https://authors/author",
+      "date": "ars ago",
+      "commentCounts": "534",
+      "commentSectionURL": "https://news.ycombinator.com/item?id=16582136"
+    },
+    {
+      "mainTitle": "Trump Dies Horribly",
+      "articleURL": "https://something/something",
+      "points": "333788",
+      "author": "World",
+      "authorURL": "https://authors/author",
+      "date": "ars ago",
+      "commentCounts": "534",
+      "commentSectionURL": "https://news.ycombinator.com/item?id=16582136"
+    },
+    {
+      "mainTitle": "Trump Dies Horribly",
+      "articleURL": "https://something/something",
+      "points": "333788",
+      "author": "World",
+      "authorURL": "https://authors/author",
+      "date": "ars ago",
+      "commentCounts": "534",
+      "commentSectionURL": "https://news.ycombinator.com/item?id=16582136"
+    },
+    {
+      "mainTitle": "Trump Dies Horribly",
+      "articleURL": "https://something/something",
+      "points": "333788",
+      "author": "World",
+      "authorURL": "https://authors/author",
+      "date": "ars ago",
+      "commentCounts": "534",
+      "commentSectionURL": "https://news.ycombinator.com/item?id=16582136"
+    },
+    {
+      "mainTitle": "Trump Dies Horribly",
+      "articleURL": "https://something/something",
+      "points": "333788",
+      "author": "World",
+      "authorURL": "https://authors/author",
+      "date": "ars ago",
+      "commentCounts": "534",
+      "commentSectionURL": "https://news.ycombinator.com/item?id=16582136"
+    },
+    {
+      "mainTitle": "Trump Dies Horribly",
+      "articleURL": "https://something/something",
+      "points": "333788",
+      "author": "World",
+      "authorURL": "https://authors/author",
+      "date": "ars ago",
+      "commentCounts": "534",
+      "commentSectionURL": "https://news.ycombinator.com/item?id=16582136"
+    },
+    {
+      "mainTitle": "Trump Dies Horribly",
+      "articleURL": "https://something/something",
+      "points": "333788",
+      "author": "World",
+      "authorURL": "https://authors/author",
+      "date": "ars ago",
+      "commentCounts": "534",
+      "commentSectionURL": "https://news.ycombinator.com/item?id=16582136"
+    },
+    {
+      "mainTitle": "Trump Dies Horribly",
+      "articleURL": "https://something/something",
+      "points": "333788",
+      "author": "World",
+      "authorURL": "https://authors/author",
+      "date": "ars ago",
+      "commentCounts": "534",
+      "commentSectionURL": "https://news.ycombinator.com/item?id=16582136"
+    },
+    {
+      "mainTitle": "Trump Dies Horribly",
+      "articleURL": "https://something/something",
+      "points": "333788",
+      "author": "World",
+      "authorURL": "https://authors/author",
+      "date": "ars ago",
+      "commentCounts": "534",
+      "commentSectionURL": "https://news.ycombinator.com/item?id=16582136"
+    },
+    {
+      "mainTitle": "Trump Dies Horribly",
+      "articleURL": "https://something/something",
+      "points": "333788",
+      "author": "World",
+      "authorURL": "https://authors/author",
+      "date": "ars ago",
+      "commentCounts": "534",
+      "commentSectionURL": "https://news.ycombinator.com/item?id=16582136"
+    },
+    {
+      "mainTitle": "Trump Dies Horribly",
+      "articleURL": "https://something/something",
+      "points": "333788",
+      "author": "World",
+      "authorURL": "https://authors/author",
+      "date": "ars ago",
+      "commentCounts": "534",
+      "commentSectionURL": "https://news.ycombinator.com/item?id=16582136"
     }
   ]
 }
