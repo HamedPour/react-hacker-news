@@ -9,6 +9,7 @@ function App() {
   const [loadingStories, setLoadingStories] = useState(false);
   const [totalStories] = useState(10);
   const [storiesPerPage] = useState(5);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
     /**
@@ -24,6 +25,11 @@ function App() {
     fetchDbData();
   }, []);
 
+  // limit the amount of stories displayed on each page
+  const lastStoryIndex = currentPage * storiesPerPage;
+  const firstStoryIndex = lastStoryIndex - storiesPerPage;
+  const currentPageStories = stories.slice(firstStoryIndex, lastStoryIndex);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -31,11 +37,14 @@ function App() {
         <SearchFilterBar />
       </header>
       <main>
-        {stories.map((story, index) => {
+        {currentPageStories.map((story, index) => {
           return <Story key={index} loading={loadingStories} story={story} />;
         })}
       </main>
-      <Pagination totalStories={totalStories} storiesPerPage={storiesPerPage} />
+      <Pagination
+        totalStories={stories.length}
+        storiesPerPage={storiesPerPage}
+      />
     </div>
   );
 }

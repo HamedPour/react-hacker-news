@@ -10,6 +10,9 @@ const Pagination = (props) => {
     pageNumber.push(i);
   }
 
+  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  // Figure out how to only show storiesPerPage in stories and on the screen
+
   return (
     <nav>
       <ul>
