@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Nav from "./styledComponents/Nav";
 import Logo from "./styledComponents/Logo";
 import SiteName from "./styledComponents/SiteName";
@@ -8,7 +8,15 @@ import SearchBar from "./styledComponents/SearchBar";
 import CogIcon from "./styledComponents/CogIcon";
 import SettingText from "./styledComponents/SettingText";
 
-const HeadNav = () => {
+const HeadNav = (props) => {
+  const [inputValue, setInputValue] = useState("");
+
+  function handleInputChange(e) {
+    let theInput = e.target.value;
+    setInputValue(theInput);
+    props.inputValueHandler(theInput);
+  }
+
   return (
     <>
       <Nav>
@@ -18,7 +26,11 @@ const HeadNav = () => {
         <SiteName>Search Hacker News</SiteName>
         <SearchBarContainer>
           <SearchIcon className="fa fa-search" />
-          <SearchBar placeholder="Search stories by title" />
+          <SearchBar
+            value={inputValue}
+            onChange={(e) => handleInputChange(e)}
+            placeholder="Search stories by title"
+          />
         </SearchBarContainer>
         <CogIcon className="fa fa-gear" />
         <SettingText>Settings</SettingText>

@@ -33,10 +33,22 @@ function App() {
     setCurrentPage(number);
   }
 
+  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  // Sort out how to extract title based on value and display it
+  function handleInputValue(value) {
+    let storyList = [];
+    stories.forEach((story) => {
+      if (story.mainTitle.indexOf(value) >= 0) {
+        storyList.push(story);
+      }
+    });
+    console.log(storyList);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <HeadNav />
+        <HeadNav inputValueHandler={handleInputValue} />
         <SearchFilterBar />
       </header>
       <main>
@@ -44,11 +56,13 @@ function App() {
           return <Story key={index} loading={loadingStories} story={story} />;
         })}
       </main>
-      <Pagination
-        updatePage={updatePageHandler}
-        totalStories={stories.length}
-        storiesPerPage={storiesPerPage}
-      />
+      <footer>
+        <Pagination
+          updatePage={updatePageHandler}
+          totalStories={stories.length}
+          storiesPerPage={storiesPerPage}
+        />
+      </footer>
     </div>
   );
 }

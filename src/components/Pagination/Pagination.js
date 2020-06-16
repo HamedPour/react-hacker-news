@@ -8,7 +8,7 @@ const Pagination = (props) => {
 
   // determine how many pagination buttons to show based on total
   // number of stories send through props.
-  for (let i = 1; i < Math.ceil(totalStories / storiesPerPage); i++) {
+  for (let i = 1; i < Math.ceil(totalStories / storiesPerPage) + 1; i++) {
     pageNumber.push(i);
   }
 
