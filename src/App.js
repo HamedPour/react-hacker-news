@@ -7,8 +7,7 @@ import Pagination from "./components/Pagination/Pagination";
 function App() {
   const [stories, setStories] = useState([]);
   const [loadingStories, setLoadingStories] = useState(false);
-  const [totalStories] = useState(10);
-  const [storiesPerPage] = useState(5);
+  const [storiesPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
@@ -30,6 +29,10 @@ function App() {
   const firstStoryIndex = lastStoryIndex - storiesPerPage;
   const currentPageStories = stories.slice(firstStoryIndex, lastStoryIndex);
 
+  function updatePageHandler(number) {
+    setCurrentPage(number);
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -42,6 +45,7 @@ function App() {
         })}
       </main>
       <Pagination
+        updatePage={updatePageHandler}
         totalStories={stories.length}
         storiesPerPage={storiesPerPage}
       />

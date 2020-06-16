@@ -1,30 +1,37 @@
 import React from "react";
+import PaginationNav from "./styledComponents/PaginationNav";
 
 const Pagination = (props) => {
   const totalStories = props.totalStories;
   const storiesPerPage = props.storiesPerPage;
-
   const pageNumber = [];
 
+  // determine how many pagination buttons to show based on total
+  // number of stories send through props.
   for (let i = 1; i < Math.ceil(totalStories / storiesPerPage); i++) {
     pageNumber.push(i);
   }
 
-  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  // Figure out how to only show storiesPerPage in stories and on the screen
+  // Send current page up to parent in order to change which
+  // page is being shown.
+  function updateCurrentPage(number) {
+    props.updatePage(number);
+  }
 
   return (
-    <nav>
+    <PaginationNav>
       <ul>
         {pageNumber.map((number) => {
           return (
             <li key={number}>
-              <button>{number}</button>
+              <button onClick={() => updateCurrentPage(number)}>
+                {number}
+              </button>
             </li>
           );
         })}
       </ul>
-    </nav>
+    </PaginationNav>
   );
 };
 
