@@ -9,6 +9,7 @@ function App() {
   const [loadingStories, setLoadingStories] = useState(false);
   const [storiesPerPage] = useState(10);
   const [currentPage, setCurrentPage] = useState(1);
+  const [currentPageStories, setCurrentPageStories] = useState([]);
 
   useEffect(() => {
     /**
@@ -22,27 +23,35 @@ function App() {
       setLoadingStories(false);
     };
     fetchDbData();
-  }, []);
 
-  // limit the amount of stories displayed on each page
-  const lastStoryIndex = currentPage * storiesPerPage;
-  const firstStoryIndex = lastStoryIndex - storiesPerPage;
-  const currentPageStories = stories.slice(firstStoryIndex, lastStoryIndex);
+    // limit the amount of stories displayed on each page
+    const lastStoryIndex = currentPage * storiesPerPage;
+    const firstStoryIndex = lastStoryIndex - storiesPerPage;
+    let availabePageStories = stories.slice(firstStoryIndex, lastStoryIndex);
+    setCurrentPageStories(availabePageStories);
+  }, [currentPage, stories, storiesPerPage]);
 
   function updatePageHandler(number) {
+    // This handles the pagination page number updater
     setCurrentPage(number);
   }
 
-  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-  // Sort out how to extract title based on value and display it
   function handleInputValue(value) {
+    // takes input value from HeadNav and create a new list of
+    // stories that contain that value in their title
     let storyList = [];
     stories.forEach((story) => {
       if (story.mainTitle.indexOf(value) >= 0) {
         storyList.push(story);
       }
     });
-    console.log(storyList);
+    setCurrentPageStories(storyList);
+  }
+
+  function renderStories() {
+    return currentPageStories.map((story, index) => {
+      return <Story key={index} loading={loadingStories} story={story} />;
+    });
   }
 
   return (
@@ -51,11 +60,7 @@ function App() {
         <HeadNav inputValueHandler={handleInputValue} />
         <SearchFilterBar />
       </header>
-      <main>
-        {currentPageStories.map((story, index) => {
-          return <Story key={index} loading={loadingStories} story={story} />;
-        })}
-      </main>
+      <main>{renderStories()}</main>
       <footer>
         <Pagination
           updatePage={updatePageHandler}
