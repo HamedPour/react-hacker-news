@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export default styled.div`
+  color: ${(props) => (props.searchedValue === "" ? "inherit" : "#0b6623")};
   padding-bottom: 5px;
   & a:nth-child(1) {
     min-height: 40px;

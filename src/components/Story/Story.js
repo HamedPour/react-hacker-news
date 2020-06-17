@@ -18,7 +18,7 @@ const Story = (props) => {
   return (
     <ArticleContainer>
       <Article>
-        <ArticleTitle>
+        <ArticleTitle searchedValue={props.searchedValue}>
           <a href={story.commentSectionURL}>{story.mainTitle}</a>
           <a target="_blank" rel="noopener noreferrer" href={story.articleURL}>
             ({story.articleURL})
