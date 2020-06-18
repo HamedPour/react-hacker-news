@@ -1,17 +1,26 @@
 import Api from "./Api";
 
 export default {
-  async topStoriesIds() {
+  async fetchTopStoriesIds() {
     /*
-     * get first 50 top story IDs
+     * get first 20 top story IDs
      */
     return await Api()
-      .get("topstories.json")
-      .then((res) => {
-        return res.data.slice(0, 20);
+      .get("beststories.json")
+      .then((blub) => {
+        return blub.data.slice(0, 2);
       })
       .catch((err) => {
-        console.log("ERROR in topStories.js - Axios is gone rogue!");
+        console.log("ERROR in topStoriesServices.js - Axios has gone rogue!");
+      });
+  },
+
+  async fetchStory(storyID) {
+    return await Api()
+      .get(`item/${storyID}.json`)
+      .then((data) => data)
+      .catch((err) => {
+        console.log("Error in topStoriesServices");
       });
   },
 };
