@@ -6,12 +6,12 @@ export default {
      * get first 20 top story IDs
      */
     return await Api()
-      .get("beststories.json")
+      .get("topstories.json")
       .then((blub) => {
-        return blub.data.slice(0, 2);
+        return blub.data.slice(0, 10);
       })
       .catch((err) => {
-        console.log("ERROR in topStoriesServices.js - Axios has gone rogue!");
+        console.log("ERROR in topStoriesServices.js", err.message);
       });
   },
 

@@ -1,9 +1,7 @@
 import React from "react";
 import PaginationNav from "./styledComponents/PaginationNav";
 
-const Pagination = (props) => {
-  const totalStories = props.totalStories;
-  const storiesPerPage = props.storiesPerPage;
+const Pagination = ({ totalStories, storiesPerPage, updatePage }) => {
   const pageNumber = [];
 
   // determine how many pagination buttons to show based on total
@@ -15,7 +13,7 @@ const Pagination = (props) => {
   // Send current page up to parent in order to change which
   // page is being shown.
   function updateCurrentPage(number) {
-    props.updatePage(number);
+    updatePage(number);
   }
 
   return (

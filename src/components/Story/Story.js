@@ -4,6 +4,7 @@ import Article from "./styledComponents/Article";
 import ArticleTitle from "./styledComponents/ArticleTitle";
 import ArticleMeta from "./styledComponents/ArticleMeta";
 import topStoriesServices from "../../services/topStoriesServices";
+import timeCalculator from "../../utils/timeCalculator";
 
 const Story = (props) => {
   const [story, setStory] = useState({});
@@ -16,12 +17,6 @@ const Story = (props) => {
 
   if (props.loading) {
     return <h2>Loading ...</h2>;
-  }
-
-  function findDate(theTime) {
-    // USE TIMESTAMP and INTERVALS here
-    console.log(new Date(theTime));
-    return;
   }
 
   return (
@@ -46,12 +41,14 @@ const Story = (props) => {
           <b> | </b>
           <span>
             {" "}
-            <a href={story.url}>{findDate(story.time)}</a>{" "}
+            <a href={story.url}>{timeCalculator(story.time)} ago</a>{" "}
           </span>
           <b> | </b>
           <span>
             {" "}
-            <a href={story.url}>{} comments</a>{" "}
+            <a href={story.url}>
+              {story.kids ? story.kids.length : "0"} comments
+            </a>{" "}
           </span>
         </ArticleMeta>
       </Article>

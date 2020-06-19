@@ -2,45 +2,25 @@ import React, { useState, useEffect } from "react";
 import Story from "../Story/Story";
 import topStoriesServices from "../../services/topStoriesServices";
 
-const StoryContainer = () => {
-  // const [currentPageStories, setCurrentPageStories] = useState([]);
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const [storiesPerPage] = useState(10);
+const StoryContainer = (props) => {
   const [loadingStories, setLoadingStories] = useState(false);
   const [storyIDs, setStoryIDs] = useState([]);
 
-  const [searchedValue, setSearchedValue] = useState("");
-
   useEffect(() => {
-    // function limitStoriesDisplayed() {
-    //   // limit the amount of stories displayed on each page
-    //   const lastStoryIndex = currentPage * storiesPerPage;
-    //   const firstStoryIndex = lastStoryIndex - storiesPerPage;
-    //   let availabePageStories = stories.slice(firstStoryIndex, lastStoryIndex);
-    //   setCurrentPageStories(availabePageStories);
-    // }
-    // limitStoriesDisplayed();
-
-    function fetchData() {
+    function fetchStoryIds() {
       setLoadingStories(true);
-      topStoriesServices
-        .fetchTopStoriesIds()
-        .then((storyID) => setStoryIDs(storyID));
+      topStoriesServices.fetchTopStoriesIds().then((storyID) => {
+        setStoryIDs(storyID);
+        props.TotalStories(storyID.length);
+      });
       setLoadingStories(false);
     }
-    fetchData();
-  }, []);
+    fetchStoryIds();
+  }, [props]);
 
   function renderStories() {
     return storyIDs.map((storyID, index) => {
-      return (
-        <Story
-          key={index}
-          loading={loadingStories}
-          searchedValue={searchedValue}
-          storyID={storyID}
-        />
-      );
+      return <Story key={index} loading={loadingStories} storyID={storyID} />;
     });
   }
 
