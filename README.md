@@ -13,4 +13,4 @@ Developers notes:
 3. React Hook lifecycles are nothing like normal lifecycles.
 4. Debouncing is very useful when fetching external data.
 5. Make sure to use more git braches during development.
-6. Coding friends are very valuable. Give them move love.
+6. Coding friends are very valuable. Give them more love.

@@ -6,7 +6,7 @@ export default {
      * get first 20 top story IDs
      */
     return await Api()
-      .get("topstories.json")
+      .get("topstories")
       .then((blub) => {
         return blub.data.slice(0, 10);
       })
@@ -17,7 +17,7 @@ export default {
 
   async fetchStory(storyID) {
     return await Api()
-      .get(`item/${storyID}.json`)
+      .get(`stories/${storyID}`)
       .then((data) => data)
       .catch((err) => {
         console.log("Error in topStoriesServices");

@@ -46,9 +46,7 @@ const Story = (props) => {
           <b> | </b>
           <span>
             {" "}
-            <a href={story.url}>
-              {story.kids ? story.kids.length : "0"} comments
-            </a>{" "}
+            <a href={story.url}>{story.descendants} comments</a>{" "}
           </span>
         </ArticleMeta>
       </Article>

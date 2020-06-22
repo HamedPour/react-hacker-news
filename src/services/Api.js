@@ -6,6 +6,7 @@ import axios from "axios";
 
 export default () => {
   return axios.create({
-    baseURL: "https://hacker-news.firebaseio.com/v0/",
+    // baseURL: "https://hacker-news.firebaseio.com/v0/",
+    baseURL: "http://localhost:3001/",
   });
 };
